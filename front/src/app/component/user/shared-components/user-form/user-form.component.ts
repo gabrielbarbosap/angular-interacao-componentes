@@ -22,7 +22,7 @@ export class UserFormComponent implements OnInit {
   ngOnInit(): void {
     this.formUser = this.fb.group({
       urlAvatar: [''],
-      name: ['', [Validators.required, Validators.maxLength(18)]],
+      name: ['', Validators.required],
       email: ['', Validators.email],
       city: [''],
       forma: [''],
