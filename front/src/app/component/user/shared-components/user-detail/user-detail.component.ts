@@ -3,6 +3,7 @@ import { FormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { UserService } from 'src/app/services/user.service';
 import Swal from 'sweetalert2'
+import { UserSubService } from '../../user-sub.service';
 
 @Component({
   selector: 'app-user-detail',
@@ -16,11 +17,13 @@ export class UserDetailComponent implements OnInit {
     private fb: FormBuilder,
     private route: ActivatedRoute,
     private router: Router,
-    private userService: UserService
+    private userService: UserService,
+    private userSubService: UserSubService,
   ) { }
 
   ngOnInit(): void {
     this.user = this.route.snapshot.data['user'];
+    this.userSubService.Userdetail('nao');
 
     this.formUser = this.fb.group({
       _id: [''],

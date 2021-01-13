@@ -10,6 +10,7 @@ import { UserDetailComponent } from './shared-components/user-detail/user-detail
 import { TableUserComponent } from './shared-components/table-user/table-user.component';
 
 
+
 @NgModule({
     declarations: [UserComponent, UserListComponent, IndexComponent, UserFormComponent, UserDetailComponent, TableUserComponent],
     imports: [UserRoutingModule, CommonModule, ReactiveFormsModule, FormsModule],

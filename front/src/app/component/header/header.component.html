@@ -1,5 +1,9 @@
 <nav class="navbar navbar-dark ">
     <div class="container-fluid">
-        <span class="navbar-brand mb-0 h1">| Cadastro DEV</span>
+        <span routerLink="/" class="navbar-brand mb-0 h1">| Cadastro DEV</span>
+        <select *ngIf="viewSelect" (change)="edit($event.target.value)" class="form-control form-control-lg">
+            <option disabled selected>Filtrar Dev </option>
+            <option *ngFor="let item of users" value={{item._id}}>{{item.name}} | {{item.forma}}</option>
+        </select>
     </div>
 </nav>

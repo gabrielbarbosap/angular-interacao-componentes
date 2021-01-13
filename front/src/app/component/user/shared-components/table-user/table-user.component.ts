@@ -1,3 +1,4 @@
+
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { User } from 'src/app/models/user';
 import { UserService } from 'src/app/services/user.service';
@@ -5,7 +6,6 @@ import { Subscription } from 'rxjs';
 import { UserSubService } from '../../user-sub.service'
 import { ActivatedRoute, Router } from '@angular/router';
 import Swal from 'sweetalert2'
-
 @Component({
   selector: 'app-table-user',
   templateUrl: './table-user.component.html',
