@@ -1,0 +1,54 @@
+<h1> <i routerLink="" class="fas fa-arrow-left"></i> Editar Usuário <img src={{user.urlAvatar}} alt="">
+</h1>
+<section>
+    <form [formGroup]="formUser" (ngSubmit)="onSubmit()">
+        <div class=" row col-md-12">
+            <div class="col-md-6">
+
+                <div class="mb-3">
+                    <label>
+                        Nome
+                        <input type="text" class="form-control" formControlName="name">
+                    </label>
+                </div>
+
+                <div class="mb-3">
+                    <label>
+                        Email
+                        <input type="text" class="form-control" formControlName="email">
+                    </label>
+                </div>
+
+                <div class="mb-3">
+                    <label>
+                        Cidade
+                        <input type="text" class="form-control" formControlName="city">
+                    </label>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="mb-3">
+                    <label>
+                        Formação
+                        <input type="text" class="form-control" formControlName="forma">
+                    </label>
+                </div>
+
+                <div class="mb-3">
+                    <label>
+                        Tecnologias
+                        <input type='text' class="form-control" formControlName="tec">
+                    </label>
+                </div>
+
+                <div class="mb-3">
+                    <label for="exampleFormControlTextarea1" class="form-label">Especialidades</label>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" formControlName="bio"
+                        rows="3"></textarea>
+                </div>
+            </div>
+        </div>
+
+        <button type="submit" class="btn btn-success btn-sub" [disabled]="!formUser.valid">Editar</button>
+    </form>
+</section>

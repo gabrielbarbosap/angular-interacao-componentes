@@ -1,0 +1,23 @@
+<table class="table table-dark table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Nome</th>
+      <th scope="col">Cidade</th>
+      <th scope="col">Formação</th>
+      <th scope="col">Especialidade</th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let us of users">
+      <th scope="row">{{us.name}}</th>
+      <td>{{us.city}}</td>
+      <td>{{us.forma}}</td>
+      <td>{{us.tec}}</td>
+      <td>
+        <i class="far fa-edit" (click)="edit(us._id)" style="color: rgb(0, 17, 255);"></i>
+        <i class="far fa-trash-alt" (click)="deleteUser(us._id)" style="color: red;"></i>
+      </td>
+    </tr>
+  </tbody>
+</table>

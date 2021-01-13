@@ -1,0 +1,17 @@
+<div *ngFor="let us of users" class="card card-st text-white bg-dark ">
+    <div class="card-header">
+        <span>{{us.name}}</span>
+        <img src={{us.urlAvatar}} alt="">
+
+    </div>
+    <div class="card-body">
+        <h5 class="card-title">{{us.city}}</h5>
+        <p class="card-text">{{us.tec}}</p>
+    </div>
+    <hr>
+    <div class="footer">
+        <a *ngIf='us.urlGit' href={{us.urlGit}}>Acessar GitHub</a>
+        <i class="far fa-trash-alt" (click)="deleteUser(us._id)" style="color: red;"></i>
+        <i class="far fa-edit" (click)="edit(us._id)" style="color: rgb(0, 17, 255);"></i>
+    </div>
+</div>

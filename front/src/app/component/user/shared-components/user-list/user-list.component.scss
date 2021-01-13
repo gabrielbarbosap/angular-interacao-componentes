@@ -1,0 +1,38 @@
+@import '~@sweetalert2/theme-dark/dark.scss';
+
+
+span {
+    display: inline-block;
+    margin-top: 2rem;
+}
+
+img {
+    width: 30%;
+    float: right;
+}
+
+a {
+    text-decoration: none;
+    margin: 1rem;
+    color: #6cf904;
+}
+
+i {
+    float: right;
+    margin-left: 1rem;
+    font-size: 1.4rem;
+    margin-right: 1rem;
+    cursor: pointer;
+}
+
+.card-st {
+    width: 92%;
+    display: inline-block;
+    margin: 1rem;
+    min-height: 15rem;
+    border-radius: 15px;
+}
+
+.footer {
+    margin-bottom: 1rem;
+}

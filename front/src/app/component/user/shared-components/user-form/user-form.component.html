@@ -1,0 +1,100 @@
+<p>
+  <a class="btn bgc-all" data-bs-toggle="collapse" href="#cadastrardev" role="button" aria-expanded="false"
+    aria-controls="collapseExample">
+    Cadastrar Desenvolvedor
+    <i class="far fa-caret-square-down"></i>
+  </a>
+</p>
+<div class="collapse" id="cadastrardev">
+
+  <div class="card card-body">
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+      Cadastrar com GitHub
+    </button>
+
+    <form [formGroup]="formUser" (ngSubmit)="onSubmit()">
+      <div class="mb-3 row">
+        <label>
+          Avatar (URL)
+          <input type="text" class="form-control" formControlName="urlAvatar">
+        </label>
+      </div>
+      <div class="mb-3 row">
+        <label>
+          Nome
+          <input type="text" class="form-control" formControlName="name">
+        </label>
+      </div>
+
+      <div class="mb-3 row">
+        <label>
+          Email
+          <input type="text" class="form-control" formControlName="email">
+        </label>
+      </div>
+
+      <div class="mb-3 row">
+        <label>
+          Cidade
+          <input type="text" class="form-control" formControlName="city">
+        </label>
+      </div>
+
+      <hr>
+
+      <div class="mb-3 row">
+        <label>
+          Formação
+          <input type="text" class="form-control" formControlName="forma">
+        </label>
+      </div>
+
+      <div class="mb-3 row">
+        <label>
+          Tecnologias
+          <input type='text' class="form-control" formControlName="tec">
+        </label>
+      </div>
+
+      <div class="mb-3">
+        <label for="exampleFormControlTextarea1" class="form-label">Especialidades</label>
+        <textarea class="form-control" id="exampleFormControlTextarea1" formControlName="bio" rows="3"></textarea>
+      </div>
+      <button type="submit" class="btn btn-success btn-sub" [disabled]="!formUser.valid">Cadastrar</button>
+    </form>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Cadastro por GitHub</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <label>
+          Usuário GitHub
+          <input type="text" class="form-control" [formControl]="userGit">
+        </label>
+        <button type="button" class="btn btn-search btn-primary" (click)="searchGitUser()">Pesquisar</button>
+
+      </div>
+
+      <!-- confirmacao -->
+      <div *ngIf="gitView" class="card text-white bg-dark mb-3" style="max-width: 100%; display: inline-block; margin: 1rem;">
+        <div class="card-header">
+          <span>{{gitView.login}}</span>
+          <img src={{gitView.avatar_url}} alt="">
+
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Não sou eu!</button>
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="updateForm(gitView)">Sim, sou eu!</button>
+      </div>
+    </div>
+  </div>
+</div>
